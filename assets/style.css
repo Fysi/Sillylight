@@ -1,0 +1,30 @@
+body {
+  margin: 0; min-height: 100vh; display: grid; place-items: center; align-content: center; gap: 1rem;
+  font: 1.1rem system-ui, sans-serif; color: #222; background: #ffe98a; transition: background 1s, color 1s;
+}
+body.dark { background: #0b0b14; color: #eee; }
+header { position: fixed; top: 0; right: 0; padding: .75rem; display: flex; gap: .5rem; }
+header * { font: inherit; color: inherit; }
+#go { position: relative; width: min(70vmin, 26rem); aspect-ratio: 1; border: 0; padding: 0; background: none; cursor: pointer; }
+#img { position: relative; z-index: 1; width: 100%; height: 100%; object-fit: contain; }
+#go::before, #go::after { content: ""; position: absolute; inset: 0; border-radius: 50%; opacity: 0; }
+#go::before { background: conic-gradient(red, orange, yellow, lime, cyan, blue, magenta, red); filter: blur(1rem); }
+#go::after { border: .6rem dashed gold; }
+.on #img { animation: squish .9s; }
+.on::before { animation: halo 1.6s; }
+.on::after { animation: ring 1.6s; }
+@keyframes squish {
+  15% { transform: scale(.8, .9) rotate(-8deg); }
+  40% { transform: scale(1.15) rotate(10deg); }
+  65% { transform: scale(.95) rotate(-5deg); }
+}
+@keyframes halo {
+  0% { opacity: 0; transform: scale(.6); }
+  20% { opacity: .9; }
+  100% { opacity: 0; transform: scale(1.5) rotate(2turn); }
+}
+@keyframes ring {
+  0% { opacity: 1; transform: scale(.7); }
+  100% { opacity: 0; transform: scale(1.8) rotate(-.5turn); }
+}
+@media (prefers-reduced-motion: reduce) { #go * , #go::before, #go::after { animation: none !important; } }

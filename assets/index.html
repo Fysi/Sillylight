@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Silly Light</title>
+<link rel="stylesheet" href="/style.css">
+<script type="module" src="/app.js"></script>
+<header>
+  <select id="light" aria-label="Light to turn off" hidden><option value="" disabled selected>Pick a light…</option></select>
+  <form id="out" method="post" action="/logout" hidden><button>Sign out</button></form>
+  <a id="in" href="/login" hidden>Sign in with Google</a>
+</header>
+<button id="go" aria-label="Turn off the light"><img id="img" alt=""></button>
+<p id="msg" role="status"></p>

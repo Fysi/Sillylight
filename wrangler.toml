@@ -1,0 +1,26 @@
+name = "sillylight"
+main = "build/index.js"
+compatibility_date = "2026-11-01"
+workers_dev = false
+preview_urls = false
+
+[build]
+command = "sh build.sh"
+
+[assets]
+directory = "assets"
+
+[[routes]]
+pattern = "sillylight.thefysi.uk"
+custom_domain = true
+
+[[kv_namespaces]]
+binding = "KV"
+id = "32a170454796465c9563bc9bb63557ba"
+
+[[flagship]]
+binding = "FLAGS"
+app_id = "66c05336-e78f-4d46-b168-a21eb9fcd845"
+
+[observability]
+enabled = true
